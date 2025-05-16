@@ -1,77 +1,173 @@
+/* 基本設定 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    background-color: #141414; /* ダークテーマ背景 */
+    color: #fff;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    background-color: #101010; /* 少し明るい黒 */
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
 }
 
-header h1 {
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e50914; /* U-NEXT風のアクセントカラー (例) */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
 }
 
-main {
-    padding: 1rem;
-    max-width: 960px; /* コンテンツの最大幅 */
-    margin: 20px auto; /* 中央寄せ */
+nav ul li {
+    margin-left: 20px;
 }
 
-.video-section {
-    background-color: #fff;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 0.9em;
+}
+nav ul li a:hover {
+    color: #aaa;
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    padding: 20px 0;
+    background-color: #000; /* ヒーローセクションの背景 */
+}
+.hero-section img {
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.video-section h2 {
-    margin-top: 0;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
+
+/* コンテンツカルーセル */
+.content-carousel {
+    padding: 30px 0;
 }
 
-.video-container {
-    position: relative;
-    /* アスペクト比 16:9 の場合 */
-    /* padding-bottom: 56.25%;  */
-    /* padding-top: 30px; */
-    /* height: 0; */
-    /* overflow: hidden; */
-    margin-bottom: 1rem; /* 動画と説明文の間隔 */
+.content-carousel h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #e5e5e5;
 }
 
-.video-container video {
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
+.carousel-container {
+    position: relative; /* Swiperのナビゲーションボタン用 */
+}
+
+/* Swiper.js を使う場合の基本的なスタイル (詳細はライブラリのドキュメント参照) */
+.swiper-container {
     width: 100%;
-    /* height: 100%; */
-    border-radius: 4px; /* 動画の角を少し丸くする */
+    padding-top: 10px; /* 上下の余白 */
+    padding-bottom: 30px; /* ナビゲーションボタンとの余白 */
 }
 
-footer {
+.swiper-slide {
+    width: 200px; /* 各カードの幅 (レスポンシブ対応が必要) */
+    margin-right: 15px;
+    background-color: #222; /* カードの背景 */
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.swiper-slide:hover {
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+
+.video-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-card h3 {
+    font-size: 0.9em;
+    padding: 10px;
+    margin: 0;
+    color: #ccc;
     text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: #fff;
-    margin-top: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* レスポンシブ対応 (簡単な例) */
+/* Swiperのナビゲーションボタンの色（デフォルトは青なので調整） */
+.swiper-button-next, .swiper-button-prev {
+    color: #fff !important; /* importantで強制的に上書き */
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 20px !important; /* アイコンサイズ調整 */
+}
+
+
+/* フッター */
+footer {
+    background-color: #101010;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8em;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin-top:10px;
+}
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+footer ul li a {
+    color: #aaa;
+    text-decoration: none;
+}
+footer ul li a:hover {
+    color: #fff;
+}
+
+
+/* 簡単なレスポンシブ対応 (例) */
 @media (max-width: 768px) {
-    main {
-        padding: 0.5rem;
+    nav ul {
+        display: none; /* スマホではメニューを隠すか、ハンバーガーメニューにする */
     }
-    .video-section {
-        padding: 1rem;
+    .logo {
+        font-size: 1.5em;
+    }
+    .content-carousel h2 {
+        font-size: 1.2em;
+    }
+    .swiper-slide {
+        width: 150px; /* スマホでのカード幅 */
     }
 }
