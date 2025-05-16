@@ -3,41 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイビデオサイト</title>
+    <title>My Video Site (U-NEXT風)</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <header>
-        <h1>マイビデオサイト</h1>
+        <div class="container">
+            <div class="logo">MyVideoSite</div>
+            <nav>
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">ランキング</a></li>
+                    <li><a href="#">ジャンル</a></li>
+                    <li><a href="#">検索</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="placeholder-icon.png" alt="User Icon"> </div>
+        </div>
     </header>
 
     <main>
-        <section class="video-section">
-            <h2>ビデオ 1: サンプルビデオ</h2>
-            <div class="video-container">
-                <video controls width="100%">
-                    <source src="videos/sample_video1.mp4" type="video/mp4">
-                    お使いのブラウザはvideoタグをサポートしていません。
-                </video>
-            </div>
-            <p>これはサンプルビデオ1の説明です。</p>
+        <section class="hero-section">
+            <div class="container">
+                <img src="placeholder-banner.jpg" alt="Main Banner" style="width:100%; height:auto;"> </div>
         </section>
 
-        <section class="video-section">
-            <h2>ビデオ 2: もうひとつのサンプル</h2>
-            <div class="video-container">
-                <video controls width="100%">
-                    <source src="videos/sample_video2.mp4" type="video/mp4">
-                    お使いのブラウザはvideoタグをサポートしていません。
-                </video>
+        <section class="content-carousel">
+            <div class="container">
+                <h2>人気作品</h2>
+                <div class="carousel-container swiper-container"> <div class="swiper-wrapper">
+                        <div class="swiper-slide video-card">
+                            <img src="placeholder-thumbnail.jpg" alt="作品1"> <h3>作品タイトル1</h3>
+                        </div>
+                        <div class="swiper-slide video-card">
+                            <img src="placeholder-thumbnail.jpg" alt="作品2">
+                            <h3>作品タイトル2</h3>
+                        </div>
+                        <div class="swiper-slide video-card">
+                            <img src="placeholder-thumbnail.jpg" alt="作品3">
+                            <h3>作品タイトル3</h3>
+                        </div>
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
             </div>
-            <p>これはサンプルビデオ2の説明です。</p>
         </section>
 
+        <section class="content-carousel">
+            <div class="container">
+                <h2>新着作品</h2>
+                <div class="carousel-container swiper-container">
+                    <div class="swiper-wrapper">
+                         <div class="swiper-slide video-card">
+                            <img src="placeholder-thumbnail.jpg" alt="作品A">
+                            <h3>作品タイトルA</h3>
+                        </div>
+                        <div class="swiper-slide video-card">
+                            <img src="placeholder-thumbnail.jpg" alt="作品B">
+                            <h3>作品タイトルB</h3>
+                        </div>
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
         </main>
 
     <footer>
-        <p>&copy; 2025 マイビデオサイト</p>
+        <div class="container">
+            <p>&copy; 2025 My Video Site. All rights reserved.</p>
+            <ul>
+                <li><a href="#">利用規約</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+                <li><a href="#">ヘルプ</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="script.js"></script>
