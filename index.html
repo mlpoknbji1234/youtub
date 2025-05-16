@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動画閲覧サイト</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>マイビデオサイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <h1>動画タイトル</h1>
-    <video controls width="600">
-        <source src="videos/your-video.mp4" type="video/mp4">
-        お使いのブラウザは動画タグをサポートしていません。
-    </video>
+    <header>
+        <h1>マイビデオサイト</h1>
+    </header>
 
-    <h2>別の動画</h2>
-    <video controls width="600">
-        <source src="videos/another-video.mp4" type="video/mp4">
-        お使いのブラウザは動画タグをサポートしていません。
-    </video>
+    <main>
+        <section class="video-section">
+            <h2>ビデオ 1: サンプルビデオ</h2>
+            <div class="video-container">
+                <video controls width="100%">
+                    <source src="videos/sample_video1.mp4" type="video/mp4">
+                    お使いのブラウザはvideoタグをサポートしていません。
+                </video>
+            </div>
+            <p>これはサンプルビデオ1の説明です。</p>
+        </section>
+
+        <section class="video-section">
+            <h2>ビデオ 2: もうひとつのサンプル</h2>
+            <div class="video-container">
+                <video controls width="100%">
+                    <source src="videos/sample_video2.mp4" type="video/mp4">
+                    お使いのブラウザはvideoタグをサポートしていません。
+                </video>
+            </div>
+            <p>これはサンプルビデオ2の説明です。</p>
+        </section>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2025 マイビデオサイト</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
